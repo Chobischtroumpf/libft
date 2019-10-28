@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 10:34:42 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 13:56:31 by adorigo          ###   ########.fr       */
+/*   Created: 2019/10/28 13:27:02 by adorigo           #+#    #+#             */
+/*   Updated: 2019/10/28 14:03:10 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*new;
+	t_list	*cur;
+	t_list	*nxt;
 
-	if (!(new = malloc(size * count)))
-		return (NULL);
-	ft_memset(new, 0, count * size);
-	return (new);
+	if (lst && *lst && del)
+	{
+		cur = *lst;
+		while (cur)
+		{
+			nxt = cur->next;
+			ft_lstdelone(cur, del);
+			cur = nxt;
+		}
+		*lst = NULL;
+	}
 }

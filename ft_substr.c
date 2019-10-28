@@ -6,7 +6,7 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:55:21 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/22 15:32:26 by adorigo          ###   ########.fr       */
+/*   Updated: 2019/10/28 14:42:32 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (ft_strlen(s) < start)
 	{
-		if (!(scpy = malloc(len + 1)))
+		if (!(scpy = malloc(sizeof(char))))
 			return (NULL);
-		scpy[0] = '\0';
+		*scpy = '\0';
 		return (scpy);
 	}
-	if (s)
+	else if (s)
 	{
-		scpy = ft_strndup(&s[start], len);
-		return (scpy);
+		return (ft_strndup(&s[start], len));
 	}
 	else
 		return (NULL);

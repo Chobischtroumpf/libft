@@ -6,7 +6,7 @@
 #    By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/11 11:53:12 by adorigo           #+#    #+#              #
-#    Updated: 2019/10/22 14:05:33 by adorigo          ###   ########.fr        #
+#    Updated: 2019/10/28 14:15:15 by adorigo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,12 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c	
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c		\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar.c	\
 		ft_putendl.c ft_putstr.c ft_putnbr.c ft_isspace.c ft_numlen.c ft_strcat.c	\
-		ft_strcmp.c ft_strcpy.c ft_strncat.c ft_strncpy.c ft_strndup.c ft_strstr.c
+		ft_strcmp.c ft_strcpy.c ft_strncat.c ft_strncpy.c ft_strndup.c ft_strstr.c	\
+		ft_strnew.c
 
-SRCS_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c	\
-		ft_lstadd_back_bonus.c ft_lstlast_bonus.c 						\
+SRCS_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c 				\
+		ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c 				\
+		ft_lstiter_bonus.c ft_lstclear_bonus.c
 
 OBJECTS = $(SRCS:%.c=%.o)
 

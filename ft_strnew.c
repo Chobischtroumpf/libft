@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 10:34:42 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 13:56:31 by adorigo          ###   ########.fr       */
+/*   Created: 2019/10/25 15:36:34 by adorigo           #+#    #+#             */
+/*   Updated: 2019/10/28 10:15:59 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strnew(size_t size)
 {
-	char	*new;
+	char	*str;
 
-	if (!(new = malloc(size * count)))
+	str = (char *)malloc(sizeof(char) * size + 1);
+	if (!str)
 		return (NULL);
-	ft_memset(new, 0, count * size);
-	return (new);
+	ft_bzero(str, size + 1);
+	return (str);
 }
