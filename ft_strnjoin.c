@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 15:55:21 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 14:10:21 by adorigo          ###   ########.fr       */
+/*   Created: 2019/11/22 11:59:46 by adorigo           #+#    #+#             */
+/*   Updated: 2019/11/22 11:59:47 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strnjoin(char *s1, char *s2, ssize_t r_size)
 {
-	char *scpy;
+	int		len;
+	char	*res;
+	ssize_t	i;
 
-	if (ft_strlen(s) < start)
+	len = ft_strlen(s1) + r_size;
+	if (!(res = (char*)malloc(sizeof(char) * (len + 1))))
+		return (0);
+	i = 0;
+	while (s1 && s1[i] != '\0')
 	{
-		if (!(scpy = malloc(sizeof(char))))
-			return (NULL);
-		*scpy = '\0';
-		return (scpy);
+		res[i] = s1[i];
+		i++;
 	}
-	else if (s)
-	{
-		return (ft_strndup(&s[start], len));
-	}
-	else
-		return (NULL);
+	while (s2 && *s2 != '\0')
+		res[i++] = *s2++;
+	res[i] = '\0';
+	return (res);
 }

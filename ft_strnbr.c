@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 15:55:21 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 14:10:21 by adorigo          ###   ########.fr       */
+/*   Created: 2019/11/22 13:33:25 by adorigo           #+#    #+#             */
+/*   Updated: 2019/11/22 13:35:28 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+ssize_t	ft_strnbr(char *s)
 {
-	char *scpy;
+	int	i;
 
-	if (ft_strlen(s) < start)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (!(scpy = malloc(sizeof(char))))
-			return (NULL);
-		*scpy = '\0';
-		return (scpy);
+		if (s[i] == '\n')
+			return ((ssize_t)i);
+		i++;
 	}
-	else if (s)
-	{
-		return (ft_strndup(&s[start], len));
-	}
-	else
-		return (NULL);
+	return (-1);
 }

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_free_cache.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 15:55:21 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 14:10:21 by adorigo          ###   ########.fr       */
+/*   Created: 2019/11/22 13:20:47 by adorigo           #+#    #+#             */
+/*   Updated: 2019/11/22 13:20:49 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int		free_cache(char **cache, int ret)
 {
-	char *scpy;
-
-	if (ft_strlen(s) < start)
+	if (*cache)
 	{
-		if (!(scpy = malloc(sizeof(char))))
-			return (NULL);
-		*scpy = '\0';
-		return (scpy);
+		free(*cache);
+		*cache = 0;
 	}
-	else if (s)
-	{
-		return (ft_strndup(&s[start], len));
-	}
-	else
-		return (NULL);
+	return (ret);
 }

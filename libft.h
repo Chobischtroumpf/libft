@@ -6,7 +6,7 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:10:59 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/28 14:11:58 by adorigo          ###   ########.fr       */
+/*   Updated: 2019/11/22 13:40:07 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>
+# include <limits.h>
 
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
@@ -41,6 +42,7 @@ char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
+ssize_t				ft_strnbr(char *s);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -48,6 +50,8 @@ int					ft_numlen(int n, int minus);
 char				**ft_split(char const *s, char c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strnjoin(char const *s1, char const *s2,
+															ssize_t r_size);
 char				*ft_strnew(size_t size);
 
 void				ft_putchar(char c);
@@ -68,6 +72,7 @@ int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
+int					free_cache(char **cache, int ret)
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *src);
 char				*ft_strndup(const char *src, size_t n);
