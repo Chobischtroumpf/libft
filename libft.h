@@ -6,7 +6,7 @@
 /*   By: alessandro <alessandro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:10:59 by adorigo           #+#    #+#             */
-/*   Updated: 2019/12/05 14:22:19 by alessandro       ###   ########.fr       */
+/*   Updated: 2019/12/05 17:30:00 by alessandro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(long nbr, char *base, int b_len);
+char				*ft_utoa_base(unsigned int n, char *base, int b_len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);

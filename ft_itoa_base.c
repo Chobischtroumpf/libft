@@ -6,9 +6,11 @@
 /*   By: alessandro <alessandro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 16:28:01 by alessandro        #+#    #+#             */
-/*   Updated: 2019/12/05 16:28:03 by alessandro       ###   ########.fr       */
+/*   Updated: 2019/12/05 17:15:37 by alessandro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	len_nbr_by_base(unsigned long nbr, int b_len)
 {
