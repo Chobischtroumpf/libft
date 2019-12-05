@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alessandro <alessandro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:25 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 13:35:28 by adorigo          ###   ########.fr       */
+/*   Updated: 2019/12/05 14:18:13 by alessandro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 ssize_t	ft_strnbr(char *s)
 {

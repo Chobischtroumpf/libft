@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alessandro <alessandro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 11:59:46 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 11:59:47 by adorigo          ###   ########.fr       */
+/*   Updated: 2019/12/05 14:21:42 by alessandro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnjoin(char *s1, char *s2, ssize_t r_size)
 {
