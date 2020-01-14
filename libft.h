@@ -6,7 +6,7 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:10:59 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 13:40:07 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:56:22 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include <errno.h>
 # include <limits.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
@@ -50,7 +53,7 @@ int					ft_numlen(int n, int minus);
 char				**ft_split(char const *s, char c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_strnjoin(char const *s1, char const *s2,
+char				*ft_strnjoin(char const *s1, char const *s2, 
 															ssize_t r_size);
 char				*ft_strnew(size_t size);
 
@@ -72,7 +75,7 @@ int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-int					free_cache(char **cache, int ret)
+int					free_cache(char **cache, int ret);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *src);
 char				*ft_strndup(const char *src, size_t n);

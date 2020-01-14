@@ -6,13 +6,13 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:54:16 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 13:35:35 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:50:23 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_strnew(void)
+static char		*ft_strnewone(void)
 {
 	char *ret;
 
@@ -69,7 +69,7 @@ int				get_next_line(int fd, char **line)
 	if (r_size < 0)
 		return (free_cache(&cache, -1));
 	if (r_size == 0 && (!cache || *cache == '\0')
-		&& (*line = ft_strnew()))
+		&& (*line = ft_strnewone()))
 		return (free_cache(&cache, 0));
 	return (extract(line, &cache, ft_strnbr(cache)));
 }

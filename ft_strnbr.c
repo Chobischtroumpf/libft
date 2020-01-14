@@ -6,9 +6,11 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:25 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 13:35:28 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:53:55 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 ssize_t	ft_strnbr(char *s)
 {

@@ -6,11 +6,13 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 11:59:46 by adorigo           #+#    #+#             */
-/*   Updated: 2019/11/22 11:59:47 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:56:37 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnjoin(char *s1, char *s2, ssize_t r_size)
+#include "libft.h"
+
+char	*ft_strnjoin(char const *s1, char const *s2, ssize_t r_size)
 {
 	int		len;
 	char	*res;
