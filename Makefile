@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alessandro <alessandro@student.42.fr>      +#+  +:+       +#+         #
+#    By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/11 11:53:12 by adorigo           #+#    #+#              #
-#    Updated: 2019/12/05 17:15:07 by alessandro       ###   ########.fr        #
+#    Updated: 2020/01/21 07:48:47 by adorigo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c	
 		ft_putendl.c ft_putstr.c ft_putnbr.c ft_isspace.c ft_numlen.c ft_strcat.c	\
 		ft_strcmp.c ft_strcpy.c ft_strncat.c ft_strncpy.c ft_strndup.c ft_strstr.c	\
 		ft_strnew.c ft_strtrim.c get_next_line.c ft_itoa_base.c ft_itoa.c			\
-		ft_utoa_base.c ft_free_cache.c 
+		ft_utoa_base.c ft_strfree.c 
 
 SRCS_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c 				\
 		ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c 				\
