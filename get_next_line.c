@@ -6,7 +6,7 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:54:16 by adorigo           #+#    #+#             */
-/*   Updated: 2020/01/14 08:50:23 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/01/21 07:31:00 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int				get_next_line(int fd, char **line)
 	static char	*cache;
 	char		*tmp;
 
-	if (fd < 0 || !line || fd > OPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (free_cache(&cache, -1));
 	while ((r_size = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
