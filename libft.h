@@ -6,7 +6,7 @@
 /*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:10:59 by adorigo           #+#    #+#             */
-/*   Updated: 2020/02/28 13:07:30 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/02/28 13:10:54 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strnjoin(char const *s1, char const *s2, 
 															ssize_t r_size);
 char				*ft_strnew(size_t size);
+int					ft_strlast(char const *str, char const *last);
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
