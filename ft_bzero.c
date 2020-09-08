@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adorigo <adorigo@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:45:38 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/17 09:59:49 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/08/05 14:55:08 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**
+*/
 
 void	ft_bzero(void *s, unsigned int n)
 {

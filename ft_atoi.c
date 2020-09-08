@@ -3,16 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adorigo <adorigo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adorigo <adorigo@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 09:15:01 by adorigo           #+#    #+#             */
-/*   Updated: 2019/10/14 10:06:16 by adorigo          ###   ########.fr       */
+/*   Updated: 2020/08/05 14:55:00 by adorigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #define MIN_INT -2147483648
 #define MAX_INT 2147483647
+
+/*
+**	the checker(const char **str) function will skip any whitespace characters
+**	and as soon as it reaches a non-whitespace character, it will check whether
+**	the non-whitespace character is a minus or not, if it is, it will set the
+** is_negative variable to 1 and return it
+*/
 
 static int	checker(const char **str)
 {
@@ -30,6 +37,12 @@ static int	checker(const char **str)
 	}
 	return (is_negative);
 }
+
+/*
+**	ft_atoi(const char *str) is the school42 implementation of the atoi
+**	function, it takes a char* as first and only argument, and returns the
+**	string transformed into an int
+*/
 
 int			ft_atoi(const char *str)
 {
