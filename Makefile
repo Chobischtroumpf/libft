@@ -10,64 +10,80 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = minishell
 
-FOLDER = ft_printf
+CFLAGS = -Wall -Wextra -Werror -I./include -c
 
-CFLAGS = -Wall -Wextra -Werror -I./includes -c
+SRC_PATH = srcs
+SRC_NAME =	bltin_echo.c	\
+			bltin_exit.c	\
+			cmd_add_rdir.c	\
+			cmd_parser_1.c	\
+			errors.c		\
+			cmd_parser_2.c	\
+			exec_builtin.c	\
+			exit.c			\
+			get_static.c	\
+			init_struct.c	\
+			free.c			\
+			lexing.c		\
+			minishell.c		\
+			utils.c
 
-SRCS = ft_memset.c ft_strlast.c ft_memcpy.c ft_memccpy.c ft_memmove.c	\
-		ft_memchr.c	ft_memcmp.c	ft_strnstr.c ft_isascii.c ft_substr.c	\
-		ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c	\
-		ft_strncmp.c ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c	\
-		ft_isprint.c ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c	\
-		ft_strjoin.c ft_strnbr.c ft_split.c ft_strmapi.c ft_strnjoin.c	\
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c	\
-		ft_putchar.c ft_putendl.c ft_strcmp.c ft_strnew.c ft_strfree.c	\
-		ft_putstr.c ft_putnbr.c ft_isspace.c ft_numlen.c ft_strcat.c	\
-		ft_strcpy.c ft_strncat.c ft_strncpy.c ft_strndup.c ft_strstr.c	\
-		ft_strtrim.c ft_utoa_base.c ft_itoa_base.c ft_itoa.c ft_bzero.c	\
-		get_next_line.c
+OBJ_PATH = objs
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
-SRCS_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c 	\
-		ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c 	\
-		ft_lstiter_bonus.c ft_lstclear_bonus.c
+CC = clang
+CFLAGS = -Wall -Wextra
 
-SRCS_LIST_FT_PRINTF = aux_check.c aux_pl.c aux_print_and_count.c		\
-				print_c.c print_d.c print_p.c print_percent.c print_s.c	\
-				print_u.c print_x.c ft_printf.c
+CFLAGS = -I include -I libft/includes
+LDFLAGS = -L libft
+LDLIBS = -lft 
 
-SRCS_FT_PRINTF = $(addprefix ${FOLDER}/, ${SRCS_LIST_FT_PRINTF})
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
-OBJECTS = $(SRCS:%.c=%.o)
+all: libft $(NAME)
 
-OBJECTS_B = $(SRCS_B:%.c=%.o)
+$(NAME): $(OBJ) libft/libft.a
+	@$(CC) $(LDFLAGS) $(LDLIBS) $^ -o $@
+	@echo "Compilation of minishell:	\033[1;32mOK\033[m"
 
-OBJECTS_FT_PRINTF = $(SRCS_LIST_FT_PRINTF:%.c=%.o)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@mkdir -pv $(OBJ_PATH)
+	@$(CC) $(CFLAGS) -c $< $(CFLAGS) -o $@
 
-all : $(NAME)
+libft:
+	@make -C libft
 
-$(NAME) : $(OBJECTS) $(OBJECTS_FT_PRINTF)
-		@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_FT_PRINTF)
+clean:
+	@make -C libft clean
+	@rm -f $(OBJ)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
 
-$(OBJECTS) : $(SRCS)
-		gcc $(CFLAGS) $(SRCS)
+clean_libft:
+	@make -C libft clean
 
-$(OBJECTS_FT_PRINTF) : $(SRCS_FT_PRINTF)
-		gcc $(CFLAGS) $(SRCS_FT_PRINTF)
+clean_minishell:
+	@rm -rf $(OBJ)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
 
-$(OBJECTS_B) : $(SRCS_B)
-		gcc $(CFLAGS) $(SRCS_B)
+fclean_libft:
+	@make -C libft fclean
 
-bonus : fclean $(OBJECTS) $(OBJECTS_B)
-	@ar rcs libft.a $(OBJECTS) $(OBJECTS_B)
+fclean_minishell:
+	@rm -rf $(OBJ_PATH)
+	@rm -f $(NAME)
 
-clean : 
-	rm -f $(OBJECTS) $(OBJECTS_B) $(OBJECTS_FT_PRINTF)
+fclean: fclean_minishell fclean_libft
 
-fclean : clean
-	rm -f $(NAME)
+re: fclean all
 
-re : fclean all
+re_minishell: fclean_minishell $(NAME)
 
-.PHONY: all re clean fclean
+re_libft:
+	@make -C libft re
+
+bonus: all
+
+.PHONY: all clean fclean re libft clean_minishell clean_libft fclean_minishell fclean_libft re_minishell re_libft
