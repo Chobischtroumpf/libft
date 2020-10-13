@@ -51,3 +51,11 @@ int			check_form(char *f)
 		return (0);
 	return (1);
 }
+
+int			get_p_len(int len, t_pl pl)
+{
+	if (len > pl.precise)
+		return(len);
+	else
+		return(pl.precise);
+}
